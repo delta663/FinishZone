@@ -1,7 +1,7 @@
 {
   "name": "FinishZone",
   "version_number": "1.0.0",
-  "website_url": "",
+  "website_url": "https://github.com/delta663/FinishZone",
   "description": "FinishZone is a server-side V Rising mod for creating customizable finish zones for events such as races, mazes, or puzzles.",
   "dependencies": [
     "BepInEx-BepInExPack_V_Rising-1.733.2",
