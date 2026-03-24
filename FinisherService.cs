@@ -60,7 +60,7 @@ internal static class FinisherService
                 return false;
             }
 
-            messages.Add("<color=yellow>The Event Winner</color>");
+            messages.Add("<color=yellow>Event Winners List</color>");
 
             var grouped = records
                 .GroupBy(r => r.Zone)
