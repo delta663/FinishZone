@@ -1,0 +1,4 @@
+interface:
+  display_name: "V Rising Mod Umbrella"
+  short_description: "Route shared V Rising boilerplate work"
+  default_prompt: "Use $vrising-mod-umbrella to route shared V Rising work in this consumer mod repo to $vrising-thunderstore-packaging or $vrising-mod-project-defaults, grounded in FinishZone's local evidence and real comparison repos."
