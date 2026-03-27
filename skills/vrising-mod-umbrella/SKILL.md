@@ -33,6 +33,9 @@ consumer mod repo.
 - Read
   [`references/primitive-taxonomy.md`](./references/primitive-taxonomy.md)
   first.
+- If the task is about orchestration, external planners, or bigger-loop
+  routing, apply the control-plane law there before choosing an extraction
+  route.
 - Separate the task into one of three lanes:
   - shared consumer primitives
   - repo-local infrastructure primitives
@@ -61,4 +64,7 @@ consumer mod repo.
 - Do not use FinishZone as a template source for repo-local gameplay behavior.
 - Do not invent Thunderstore or project-default boilerplate when the evidence
   is still thin.
+- Do not let planners act as direct repo operators here; they may propose typed
+  work orders and consume receipts, but execution belongs to deterministic
+  runners or thin repo-local adoption steps.
 - Do not use umbrella extraction as cover for runtime code changes in this repo.

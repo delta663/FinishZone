@@ -8,6 +8,11 @@
   - `manifest.json`
   - `README.md`
   - `icon.png`
+- FinishZone contributes:
+  - local evidence
+  - adoption PRs
+  - consumer-repo validation
+- Orchestration and execution logic stay outside this repo's umbrella copy.
 
 ## Shared Consumer Primitive Families
 

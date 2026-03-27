@@ -39,3 +39,10 @@ prove the same shape.
   least two independent V Rising mod repos.
 - When evidence is incomplete, keep the pattern in the extraction inventory
   instead of turning it into a template or shared module.
+
+## Control-Plane Law
+
+- External planners may classify work and propose typed work orders, but they
+  do not replace deterministic executors.
+- Promotion and adoption decisions must be backed by receipts, proofs, and
+  repo evidence rather than chat state or implied memory.
