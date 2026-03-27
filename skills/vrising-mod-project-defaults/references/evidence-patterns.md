@@ -1,26 +1,22 @@
 # Project Defaults Evidence Patterns
 
-Use these examples to separate stable defaults from repo-local wiring.
+Use these examples to separate what FinishZone proves from what other consumer
+repos prove about shared project defaults.
 
-## FinishZone
+## What The Current Repo Proves
 
-- Local evidence:
+- FinishZone provides local evidence for:
   - `FinishZone.csproj`
   - `manifest.json`
   - `README.md`
   - `icon.png`
-- What it proves:
-  - a real V Rising mod repo can keep its project file and package metadata at
-    repo root
-  - plugin metadata and package references often live directly in the mod
-    project file
-  - README and icon can be part of the repo's project-default surface
-- What not to overfit:
-  - explicit interop/core reference inventories
-  - absolute post-build copy targets
-  - local deployment assumptions
+- This repo proves that a real V Rising mod can keep its project file and
+  package metadata at repo root, but it does not prove that its exact
+  interop/core wiring should become shared.
 
-## Odjit/KindredCommands
+## What Other Repos Prove
+
+### Odjit/KindredCommands
 
 - Repo: `https://github.com/Odjit/KindredCommands`
 - Evidence:
@@ -38,7 +34,7 @@ Use these examples to separate stable defaults from repo-local wiring.
   - giant local reference lists
   - release workflow coupling
 
-## WhiteFang5/VMods
+### WhiteFang5/VMods
 
 - Repo: `https://github.com/WhiteFang5/VMods`
 - Evidence:
@@ -51,7 +47,7 @@ Use these examples to separate stable defaults from repo-local wiring.
   - direct copy targets into local plugin folders
   - hardcoded machine-specific install assumptions
 
-## Extraction Notes
+## What Still Lacks Enough Evidence
 
 - FinishZone does not currently provide a local `.editorconfig`, so editor-rule
   defaults still need cross-repo proof before standardization.
@@ -61,6 +57,8 @@ Use these examples to separate stable defaults from repo-local wiring.
   - plugin metadata property names
   - `.editorconfig` rule blocks that clearly repeat
   - README and icon placement conventions when proven across repos
+- Still unproven:
+  - AI-assisted project-guidance surfaces as shared defaults
 - Keep repo-local:
   - absolute drive paths
   - explicit interop/core reference inventories

@@ -1,22 +1,20 @@
 # Thunderstore Evidence Patterns
 
-Use these examples as the first grounding pass for Thunderstore packaging work.
+Use these examples to separate what FinishZone proves from what other consumer
+repos prove about Thunderstore packaging.
 
-## FinishZone
+## What The Current Repo Proves
 
-- Local evidence:
-  - root `manifest.json`
-  - root `README.md`
-  - root `icon.png`
-- What it proves:
-  - a simple root-layout package metadata shape exists in a real V Rising mod
-    repo
-  - package docs and icon placement can live at repo root
-- What not to overfit:
-  - exact manifest fields beyond the standard Thunderstore contract
-  - dependency versions, descriptions, and naming
+- FinishZone provides a local root-layout package metadata surface through:
+  - `manifest.json`
+  - `README.md`
+  - `icon.png`
+- This repo proves a simple root-layout packaging shape, not a universal
+  Thunderstore convention.
 
-## WhiteFang5/VMods
+## What Other Repos Prove
+
+### WhiteFang5/VMods
 
 - Repo: `https://github.com/WhiteFang5/VMods`
 - Evidence:
@@ -31,7 +29,7 @@ Use these examples as the first grounding pass for Thunderstore packaging work.
   - exact manifest fields beyond the standard Thunderstore contract
   - package naming, descriptions, and dependency values
 
-## Odjit/KindredCommands
+### Odjit/KindredCommands
 
 - Repo: `https://github.com/Odjit/KindredCommands`
 - Evidence:
@@ -47,16 +45,16 @@ Use these examples as the first grounding pass for Thunderstore packaging work.
   - tag-to-version conventions
   - secret names or workflow step ordering
 
-## Extraction Notes
+## What Still Lacks Enough Evidence
 
 - Shared candidates:
   - package folder shape expectations
   - manifest or release metadata checklist
   - release workflow stage outline
   - icon and README presence rules
+- Still unproven:
+  - a shared `thunderstore.toml` convention
+  - AI-guided Thunderstore authoring surfaces
 - Keep repo-local:
   - mod name, author namespace, summary text, dependencies, branding, and
     release cadence
-- TOML note:
-  - Do not standardize `thunderstore.toml` from this reference set alone; these
-    examples prove manifest and workflow patterns, not a TOML convention.
