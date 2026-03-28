@@ -1,6 +1,6 @@
 ---
 name: vrising-mod-project-defaults
-description: Analyze reusable V Rising mod project defaults across real repos. Use when Codex needs to compare shared csproj structure, root .editorconfig, package metadata, README or icon conventions, or decide what project-level defaults belong in the shared umbrella instead of a single mod repository.
+description: Analyze reusable V Rising mod project defaults across real repos. Use when Codex needs to compare shared `csproj` structure, root `.editorconfig`, metadata placement, or README and icon conventions before treating them as shared umbrella defaults.
 ---
 
 # V Rising Mod Project Defaults
@@ -40,11 +40,8 @@ template copier.
 
 3. Produce a normalized defaults plan.
 
-- Output should be an extraction or adoption plan for shared defaults.
-- Call out:
-  - reusable defaults
-  - consumer-repo inputs
-  - risky or repo-specific pieces that stay local
+- Output should separate reusable defaults, consumer-repo inputs, and risky
+  local wiring that stays out of the umbrella.
 
 4. Route adjacent work correctly.
 

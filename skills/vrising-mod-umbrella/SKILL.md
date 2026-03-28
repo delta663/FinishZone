@@ -1,34 +1,32 @@
 ---
 name: vrising-mod-umbrella
-description: Route shared V Rising mod extraction work and separate proven umbrella modules from repo-specific details. Use when Codex needs to decide what repeated V Rising boilerplate belongs in the shared layer, or to hand Thunderstore work to `vrising-thunderstore-packaging` versus project-default work to `vrising-mod-project-defaults`.
+description: Route shared V Rising mod extraction work from a consumer repo and keep shared umbrella modules separate from repo-local details. Use when Codex needs to classify FinishZone work, compare it against other V Rising repos, or hand Thunderstore versus project-default extraction to the right skill.
 ---
 
 # V Rising Mod Umbrella
 
-Use this skill as the local routing layer for shared V Rising work in a
-consumer mod repo.
+Use this skill as the local routing surface for shared V Rising work in this
+consumer repo.
 
 ## Current Focus
 
-- FinishZone is a consumer or adoption repo, not the shared harness or release
-  repo.
+- FinishZone is a consumer or adoption repo, not the harness or release repo.
 - The local evidence surfaces here are `FinishZone.csproj`, `manifest.json`,
   `README.md`, and `icon.png`.
-- The canonical umbrella taxonomy still applies here, even though this repo is
+- The canonical umbrella taxonomy still applies here even though this repo is
   only one consumer evidence point.
 
 ## Routing
 
-- Use `vrising-thunderstore-packaging` for Thunderstore manifests or TOML,
-  package READMEs/icons, `tcli` release workflows, and Thunderstore-specific
-  release boilerplate.
-- Use `vrising-mod-project-defaults` for shared `csproj` defaults,
-  `.editorconfig`, and repeated metadata or packaging conventions.
+- Thunderstore manifests, package READMEs/icons, and `tcli` release work go to
+  `vrising-thunderstore-packaging`.
+- Shared `csproj`, `.editorconfig`, and repeated metadata defaults go to
+  `vrising-mod-project-defaults`.
 - If the task mixes both, split the analysis instead of forcing one mega-plan.
 
 ## Workflow
 
-1. Start with the primitive taxonomy.
+1. Classify first.
 
 - Read
   [`references/primitive-taxonomy.md`](./references/primitive-taxonomy.md)
@@ -36,10 +34,8 @@ consumer mod repo.
 - If the task is about orchestration, external planners, or bigger-loop
   routing, apply the control-plane law there before choosing an extraction
   route.
-- Separate the task into one of three lanes:
-  - shared consumer primitives
-  - repo-local infrastructure primitives
-  - reference-only future primitives
+- Choose one lane: shared consumer primitives, repo-local infrastructure
+  primitives, or reference-only future primitives.
 
 2. Keep this repo in the consumer lane.
 
@@ -64,7 +60,6 @@ consumer mod repo.
 - Do not use FinishZone as a template source for repo-local gameplay behavior.
 - Do not invent Thunderstore or project-default boilerplate when the evidence
   is still thin.
-- Do not let planners act as direct repo operators here; they may propose typed
-  work orders and consume receipts, but execution belongs to deterministic
-  runners or thin repo-local adoption steps.
+- Planners may propose typed work orders and consume receipts, but execution
+  belongs to deterministic runners or thin repo-local adoption steps.
 - Do not use umbrella extraction as cover for runtime code changes in this repo.

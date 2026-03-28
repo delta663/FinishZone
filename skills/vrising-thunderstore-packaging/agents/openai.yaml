@@ -1,4 +1,4 @@
 interface:
   display_name: "V Rising Thunderstore Packaging"
-  short_description: "Compare V Rising Thunderstore boilerplate"
-  default_prompt: "Use $vrising-thunderstore-packaging to inspect FinishZone plus real V Rising mod repos, compare Thunderstore manifests and release workflows, and produce an extraction plan instead of a local template."
+  short_description: "Compare V Rising Thunderstore patterns"
+  default_prompt: "Use $vrising-thunderstore-packaging to inspect FinishZone plus real V Rising mod repos, compare Thunderstore packaging and release patterns, and produce an extraction plan instead of a local template."

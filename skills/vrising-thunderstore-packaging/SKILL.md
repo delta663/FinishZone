@@ -1,13 +1,13 @@
 ---
 name: vrising-thunderstore-packaging
-description: Analyze and normalize V Rising Thunderstore packaging and release boilerplate across real mod repos. Use when Codex needs to compare Thunderstore manifests or TOML, package READMEs/icons, tcli release workflows, or decide what Thunderstore behavior belongs in the shared umbrella instead of a single repository.
+description: Analyze reusable V Rising Thunderstore packaging and release patterns across real mod repos. Use when Codex needs to compare Thunderstore manifests, package READMEs/icons, `tcli` release workflows, or decide what Thunderstore behavior belongs in the shared umbrella instead of this repo alone.
 ---
 
 # V Rising Thunderstore Packaging
 
-Use this skill to extract Thunderstore-specific patterns only after grounding the
-work in real V Rising mod repos. This is an evidence-first extraction skill, not
-a local template emitter.
+Use this skill to extract Thunderstore-specific patterns only after grounding
+the work in real V Rising mod repos. It is an evidence-first extraction skill,
+not a local template emitter.
 
 ## Workflow
 
@@ -21,8 +21,8 @@ a local template emitter.
   metadata and ideally one repo with release automation.
 - In this repo, begin with
   [`references/evidence-patterns.md`](./references/evidence-patterns.md).
-- If no real examples are available, stop and report `needs real repo examples`
-  instead of inventing a shared package shape.
+- If no real examples are available, stop and report
+  `needs real repo examples`.
 
 2. Normalize only the reusable contract.
 
@@ -35,11 +35,8 @@ a local template emitter.
 
 3. Produce an adoption plan, not a template dump.
 
-- Output should be a normalized extraction or adoption plan for the umbrella.
-- Explicitly separate:
-  - what would become shared contract
-  - what stays consumer-repo input
-  - what still needs more evidence
+- Output should separate shared contract, consumer-repo inputs, and open
+  evidence gaps.
 
 4. Route non-Thunderstore concerns away.
 

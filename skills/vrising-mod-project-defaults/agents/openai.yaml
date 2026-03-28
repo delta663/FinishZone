@@ -1,4 +1,4 @@
 interface:
   display_name: "V Rising Mod Project Defaults"
-  short_description: "Compare reusable mod project defaults"
+  short_description: "Compare reusable V Rising mod defaults"
   default_prompt: "Use $vrising-mod-project-defaults to inspect FinishZone plus real V Rising mod repos, compare shared csproj, editorconfig, and metadata defaults, and produce an evidence-first extraction plan."
