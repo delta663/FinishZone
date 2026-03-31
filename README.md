@@ -81,17 +81,17 @@ FinishZone is a **server-side** V Rising mod that allows administrators to creat
 - `.rewards add <setname> <prefabguid> <amount>`
   - Add an item to a reward set.
   - Shortcut: *.rewards a <setname> <prefabguid> <amount>*
-  - Example: *.rewards add Potion 429052660 10*
+  - Example: *.rewards add Winner -1461326411 20*
 
 - `.rewards remove <setname>`
   - Remove a reward set.
   - Shortcut: *.rewards rm <setname>*
-  - Example: *.rewards remove potion*
+  - Example: *.rewards remove winner*
   
 - `.rewards give <setname> [player]`
   - Give a reward set to a player. If no player is provided, the reward set is given to yourself.
   - Shortcut: *.rewards g <setname> [player]*
-  - Example: *.rewards give potion Del*
+  - Example: *.rewards give winner Del*
 
 - `.rewards reload`
   - Reload rewards.json from disk.
