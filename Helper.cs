@@ -1,9 +1,12 @@
+using BepInEx;
 using Il2CppInterop.Runtime;
 using ProjectM;
 using ProjectM.Scripting;
 using Stunlock.Core;
 using Unity.Collections;
 using Unity.Entities;
+using System;
+using ProjectM.Network;
 
 namespace FinishZone;
 
@@ -24,7 +27,6 @@ internal static class Helper
 
         return new Entity();
     }
-
     
 	public static PrefabGUID GetPrefabGUID(Entity entity)
 	{
@@ -76,4 +78,45 @@ internal static class Helper
         return query.ToEntityArray(Allocator.Temp);
     }
 
+    public static Entity GetCharacterFromUser(User user)
+    {
+        try
+        {
+            return user.LocalCharacter.GetEntityOnServer();
+        }
+        catch
+        {
+            return Entity.Null;
+        }
+    }
+
+    public static string ReadUserName(User user, Entity userEntity)
+    {
+        try
+        {
+            var name = user.CharacterName.ToString();
+            return string.IsNullOrWhiteSpace(name) ? $"User#{userEntity.Index}" : name;
+        }
+        catch
+        {
+            return $"User#{userEntity.Index}";
+        }
+    }
+
+    public static void NotifyUser(EntityManager em, Entity userEntity, string message)
+    {
+        try
+        {
+            if (userEntity == Entity.Null || !em.Exists(userEntity))
+                return;
+
+            var user = em.GetComponentData<User>(userEntity);
+            var fixedMessage = new FixedString512Bytes(message ?? string.Empty);
+            ServerChatUtils.SendSystemMessageToClient(em, user, ref fixedMessage);
+        }
+        catch (Exception ex)
+        {
+            Core.Log.LogError($"[RewardsService] Failed to notify user: {ex}");
+        }
+    }
 }
