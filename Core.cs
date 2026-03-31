@@ -43,6 +43,7 @@ internal static class Core
 
         FinishzonesService = new FinishzoneService();
         FinishzonesService.Initialize();
+        RewardsService.Initialize();
 
         _hasInitialized = true;
         Log.LogInfo($"{nameof(InitializeAfterLoaded)} completed");
