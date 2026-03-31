@@ -1,6 +1,6 @@
 # FinishZone
 
-FinishZone is a **server-side** V Rising mod that allows administrators to create finish zones for events such as races, mazes, or puzzles.
+FinishZone is a **server-side** V Rising mod that allows administrators to create finish zones for events such as races, mazes, or puzzles, and includes commands for manually giving reward sets to players.
 
 ## Features
 - Create finish zones using simple in-game chat commands.
@@ -11,6 +11,7 @@ FinishZone is a **server-side** V Rising mod that allows administrators to creat
 - Log all completions to a CSV file for history tracking.
 - Display recorded winners using an in-game command.
 - Reload zone data from file without restarting the server.
+- Includes commands for manually giving reward sets to players.
 
 ## Requirements
 1. [BepInEx 1.733.2](https://thunderstore.io/c/v-rising/p/BepInEx/BepInExPack_V_Rising/)
@@ -26,12 +27,12 @@ FinishZone is a **server-side** V Rising mod that allows administrators to creat
 
 ## How It Works
 - FinishZone continuously checks player positions against all enabled finish zones.
-- The checking frequency is controlled by `LoopIntervalSeconds` in `finishzones.json` Use `0.2–1.0` for precision-based activities and `1.0–2.0` for less precision-sensitive activities.
+- The checking frequency is controlled by `LoopIntervalSeconds` in `finishzones.json`. Use `0.2–1.0` for precision-based activities and `1.0–2.0` for less precision-sensitive activities.
 - When a player enters a finish zone, the server broadcasts a completion message.
 - Rewards are granted only the **first time** a player completes a finish zone.
 - A cooldown prevents repeated triggering in a short period.
 - Every completion is recorded in `finish_log.csv`.
-**`AdminAuth` users do not trigger finish zones. Please use `AdminDeAuth` before testing.**
+- **`AdminAuth` users do not trigger finish zones. Please use `AdminDeAuth` before testing.**
 
 ## Commands
 
@@ -72,20 +73,34 @@ FinishZone is a **server-side** V Rising mod that allows administrators to creat
 - `.finish disable`
   - Disables the FinishZone mod globally.
 
+- `.rewards add <setname> <prefabguid> <amount>`
+  - Add an item to a reward set.
+  - Shortcut: *.rewards a <setname> <prefabguid> <amount>*
+
+- `.rewards remove <setname>`
+  - Remove a reward set.
+  - Shortcut: *.rewards rm <setname>*
+  
+- `.rewards give <setname> [player]`
+  - Give a reward set to a player. If no player is provided, the reward set is given to yourself.
+  - Shortcut: *.rewards g <setname> [player]*
+
+- `.rewards reload`
+  - Reload rewards.json from disk.
+  - Shortcut: *.rewards rl*
+
+- `.rewards list`
+  - Show all reward sets and their items.
+  - Shortcut: *.rewards l*
+
 ## Config Files
 After the first server start, the following files will be created:
 - `BepInEx/config/FinishZone/finishzones.json`
 - `BepInEx/config/FinishZone/finish_log.csv`
+- `BepInEx/config/FinishZone/rewards.json`
+- `BepInEx/config/FinishZone/rewards_log.csv`
 
 ### finishzones.json
-This file defines:
-- whether the entire mod is enabled
-- how often zones are checked
-- all configured finish zones
-- each zone’s message and vertical limit
-- each zone’s reward settings
-- each zone’s enabled/disabled state
-
 Example:
 
 ```json
@@ -111,16 +126,36 @@ Example:
 }
 ```
 
-### finish_log.csv
-This file stores finish history in CSV format:
-- server time
-- finish zone id
-- player steam id
-- player name
-- whether the completion was the player's first time in that zone
+### rewards.json
+Example:
+
+```json
+{
+  "Winner": [
+    {
+      "Item": -1461326411,
+      "Amount": 20
+    },
+    {
+      "Item": -1021407417,
+      "Amount": 20
+    }
+  ],
+  "Potion": [
+    {
+      "Item": 429052660,
+      "Amount": 10
+    },
+    {
+      "Item": 800879747,
+      "Amount": 10
+    }
+  ]
+}
+```
 
 ## Credits
-- **Odjit** for the original code and assistance with this mod.
+- **Odjit** and **zfolmt** for the original code and assistance with this mod.
 - **V Rising modding community**
 
 ## License
@@ -130,4 +165,3 @@ This project is licensed under the AGPL-3.0 license.
 > - This mod was first made for my own server and originally ran through KindredCommands. It has now been separated into a standalone mod so that everyone can use it.
 > - If you have any problems or run into bugs, please report them to me in the [V Rising Modding Community](https://discord.com/invite/QG2FmueAG9)
 > **Del** (delta_663)
-
