@@ -44,14 +44,17 @@ FinishZone is a **server-side** V Rising mod that allows administrators to creat
 - `.finish add <id> <radius>`
   - Create a new finish zone at your current position.
   - Shortcut: *.finish a <id> <radius>*
+  - Example: *.finish add Maze 5*
 
 - `.finish update <id> <radius>`
   - Update the position and radius of an existing finish zone at your current position.
   - Shortcut: *.finish u <id> <radius>*
+  - Example: *.finish update Maze 8*
 
 - `.finish remove <id>`
   - Remove a finish zone.
   - Shortcut: *.finish rm <id>*
+  - Example: *.finish remove maze*
 
 - `.finish reload`
   - Reloads all finish zones from finishzones.json
@@ -63,9 +66,11 @@ FinishZone is a **server-side** V Rising mod that allows administrators to creat
 
 - `.finish on <id>`
   - Enable a specific finish zone.
+  - Example: *.finish on maze*
 
 - `.finish off <id>`
   - Disable a specific finish zone.
+  - Example: *.finish off maze*
   
 - `.finish enable`
   - Enables the FinishZone mod globally.
@@ -76,14 +81,17 @@ FinishZone is a **server-side** V Rising mod that allows administrators to creat
 - `.rewards add <setname> <prefabguid> <amount>`
   - Add an item to a reward set.
   - Shortcut: *.rewards a <setname> <prefabguid> <amount>*
+  - Example: *.rewards add Potion 429052660 10*
 
 - `.rewards remove <setname>`
   - Remove a reward set.
   - Shortcut: *.rewards rm <setname>*
+  - Example: *.rewards remove potion*
   
 - `.rewards give <setname> [player]`
   - Give a reward set to a player. If no player is provided, the reward set is given to yourself.
   - Shortcut: *.rewards g <setname> [player]*
+  - Example: *.rewards give potion Del*
 
 - `.rewards reload`
   - Reload rewards.json from disk.
